@@ -12,7 +12,11 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
 
   return (
     <Card title={article.title}>
-      <img src={article.image} alt={article.title} />
+      <img
+        src={article.urlToImage}
+        alt={article.title}
+        style={{ maxWidth: "275px" }}
+      />
       <p>{article.description}</p>
       <p>{article.content}</p>
       <a href={article.url} target="_blank" rel="noopener noreferrer">

@@ -35,14 +35,14 @@ const NewsContainer: React.FC = () => {
 
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <div style={{ textAlign: "center", width: "60%" }}>
+      <div style={{ textAlign: "justify", width: "60%" }}>
         <h1>News Articles</h1>
         {loading ? (
           <Spin size="large" />
         ) : (
           <div>
-            <ArticleList articles={articles} onItemClick={handleArticleClick} />
             <ArticleDetail article={selectedArticle} />
+            <ArticleList articles={articles} onItemClick={handleArticleClick} />
           </div>
         )}
       </div>
