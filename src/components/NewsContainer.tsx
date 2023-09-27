@@ -35,7 +35,7 @@ const NewsContainer: React.FC = () => {
 
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <div style={{ textAlign: "justify", width: "60%" }}>
+      <div style={{ textAlign: "justify", maxWidth: "75%" }}>
         <h1>News Articles</h1>
         {loading ? (
           <Spin size="large" />

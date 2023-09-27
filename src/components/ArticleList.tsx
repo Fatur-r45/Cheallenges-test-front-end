@@ -15,7 +15,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, onItemClick }) => {
         onChange: (page) => {
           console.log(page);
         },
-        pageSize: 3,
+        pageSize: 4,
       }}
       dataSource={articles}
       footer={
@@ -28,15 +28,30 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, onItemClick }) => {
           key={item.title}
           onClick={() => onItemClick(item)}
           extra={
-            <img
-              style={{ maxWidth: "275px", objectFit: "cover" }}
-              alt="logo"
-              src={item.urlToImage}
-            />
+            <div
+              style={{
+                width: "275px",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                style={{ maxWidth: "275px", objectFit: "cover" }}
+                alt="logo"
+                src={item.urlToImage}
+              />
+            </div>
           }
         >
           <List.Item.Meta
-            title={<a>{item.title}</a>}
+            title={
+              <div>
+                <a>{item.title}</a>
+                <p style={{ color: "rgba(0,0,0,0.6)" }}>{item.source.name}</p>
+              </div>
+            }
             description={item.description}
           />
           {item.content}
